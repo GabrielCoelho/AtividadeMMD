@@ -6,17 +6,6 @@
 
   // Atividade 1 - MMD001 
   // Nome Completo: Gabriel Coelho Soares
-  //
-  //   FUNCAO A SER IMPLEMENTADA PELO GRUPO                  ///
-///       FUNCAO RECEBE OPCAO (inteiro) E ANGULO [rad]         ///
-///       FUNCAO IRA RETORNAR:                                  ///
-///               sin(ANGULO) - SE OPCAO 1                      ///
-///               cos(ANGULO) - SE OPCAO 2                      ///
-///               tan(ANGULO) - SE OPCAO 3 E ANGULO VALIDO NO DOMINIO     ///
-///               123456789   - SE OPCAO 3 E ANGULO INVALIDO NO DOMINIO   ///
-///               RETORNAR -1 SE QUALQUER OUTRA OPCAO          ///
-///////////////////////////////////////////////////////////////////
-
   
 int logica(int opcao, int p, int q)
 {
@@ -33,26 +22,26 @@ int logica(int opcao, int p, int q)
         } else {
           return 0;
         } 
-      case 2:
+      case 3:
         if (!((!p || q) && (!q || p))) {
           return 1;
         } else {
           return 0;
         } 
-      case 2:
+      case 4:
         if (!p || q) {
           return 1;
         } else {
           return 0;
         } 
-      case 2:
+      case 5:
         if ((!p || q)&&(!q||p)) {
           return 1;
         } else {
           return 0;
         } 
-      default:
-       printf("Não deveria chegar aqui\n")
+      case 6:
+       return -1;
   }
 }
 
