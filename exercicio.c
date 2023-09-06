@@ -41,7 +41,7 @@ int logica(int opcao, int p, int q)
           return 0;
         } 
       case 6:
-       return -1;
+       return (-1);
   }
 }
 
