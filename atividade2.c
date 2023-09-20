@@ -2,69 +2,51 @@
 #include <stdbool.h>
 #include <math.h>
 
-int permutacao(int perm){
-	int i;
-	i = perm -1;
-	while(i>0){
-		perm = perm*i;
-		i--;
-	}
-	return perm;
-}
-
-int arranjo(int el, int k){
-	double res;
-	int i, j; 
-	i=el-1;
-	j = (el-k);
-	while(i>0){
-		el=el*i;
-		i--;
-	}
-	i=j-1;
-	while(i>0){
-		j=j*i;
-		i--;
-	}
-	res = el/j;
-	return res;
-}
-
-double combinacao(int n, int k){
-	double res;
-	int i, j; 
-	i=n-1;
-	j = (n-k);
+int fatorial(int n){
+	int i=n-1;
 	while(i>0){
 		n=n*i;
 		i--;
 	}
-	i=j-1;
-	while(i>0){
-		j=j*i;
-		i--;
-	}
-	i=k-1;
-	while(i>0){
-		k=k*i;
-		i--;
-	}
-	res = n/(k*j);
-	return res;
+	return n;
+}
+
+int permutacao(int perm){
+	perm=(fatorial(perm));
+	return perm;
+}
+
+int arranjo(int el, int k){
+	k = el-k;
+	el=fatorial(el);
+	k=fatorial(k);
+	return el/k;
+}
+
+double combinacao(int n, int k){
+	int j;
+	j = (n-k);
+	n = fatorial(n);
+	j = fatorial(j);
+	k = fatorial(k);
+	return n/(k*j);
 }
 
 double logica(int a,int b){
 	int op;
 	if(a == b){
+		printf("Número de Elementos igual ao de Posições\n      EXECUTANDO: PERMUTAÇÃO SIMPLES\n\n");
 		return permutacao(a);
 	}else if(b < a){
 		printf("Podemos fazer um Arranjo ou uma Combinação, qual voce prefere?\n\n1 para Arranjo\n2 para Combinação: ");
 		scanf("%d", &op);
 		switch(op){
 			case 1:
+				printf("EXECUTANDO: ARRANJO SIMPLES\n\n");
 				return arranjo(a, b);
 				break;
 			case 2:
+				printf("EXECUTANDO: COMBINAÇÃO SIMPLES\n\n");
 				return combinacao(a, b);
 				break;
 			default:
@@ -77,15 +59,15 @@ double logica(int a,int b){
 
 
 int main(void) {
-	printf("Atividade de Matematica 2");
+	printf("Atividade 2 de Matemática \n\n");
 	// Nome: Gabriel Coelho Soares
 	int option, posicao, elementos;
 
-	printf("Seja bem vindo ao organizador automatico\n");
-	printf("Aqui, basta indicar o numero de elementos e posicoes para executarmos:\n1. Permutação Simples\n2. Arranjo Simples\nCombinação Simples\n\n");
-	printf("Indique o numero de elementos: ");
+	printf("ORGANIZADOR AUTOMÁTICO\n");
+	printf("Aqui, basta indicar o número de elementos e posições para executarmos:\n   Permutação Simples\n   Arranjo Simples\n   Combinação Simples\n\n");
+	printf("Indique o número de elementos: ");
 	scanf("%d", &elementos);
-	printf("Agora nos informe o numero de posicoes: ");
+	printf("Agora nos informe o número de posicoes: ");
 	scanf("%d", &posicao);
-	printf("As possibilidades de sua logica resultaram em: %.1f", logica(elementos, posicao));
+	printf("As possibilidades de organização são: %.1f", logica(elementos, posicao));
 }
