@@ -126,6 +126,7 @@ void determinanteMatriz(int ma, int na, int mxa[ma][na]) {
 int main(int argc, char *argv[]) {
   char matriz_a_nome[2] = "A", matriz_b_nome[2] = "B";
   int linhas_a, linhas_b, colunas_a, colunas_b, menu = 0;
+  srand(time(NULL));
   printf("--------- OPERAÇÕES MATRICIAIS --------\n\n");
   printf("Entre com a ordem da primeira matriz: A\nLinhas: ");
   scanf("%d", &linhas_a);
