@@ -1,6 +1,7 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 #include <unistd.h>
 
 void randomizaMatriz(int x, int y, int m[x][y]) {
@@ -167,7 +168,7 @@ int main(int argc, char *argv[]) {
       break;
     case 4:
       printf("Determinante da matriz (A)\n");
-      determinateMatriz(linhas_a, colunas_a, matriz_a);
+      determinanteMatriz(linhas_a, colunas_a, matriz_a);
       printf("Determinante da matriz (B)\n");
       determinanteMatriz(linhas_b, colunas_b, matriz_b);
       menu = 0;
