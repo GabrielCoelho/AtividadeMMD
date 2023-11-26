@@ -114,7 +114,14 @@ void determinanteMatriz(int ma, int na, int mxa[ma][na]) {
       sleep(1);
       break;
     case 4:
-      // a implementar
+      // Tenho duas ideias para realizar essa determinante 4x4. As duas involvem
+      // chamar novamente a operação determinanteMatriz(3,3, outramatriz), e
+      // explico. 1ª Opção: realizar uma passagem geral na matriz contando as
+      // linhas ou colunas que tem 0. A que tiver mais, realizar o cálculo; 2ª
+      // Opção: pegar qualquer linha e realizar o cálculo independente da
+      // quantidade de zeros. De qualquer jeito, tenho que realizar uma
+      // Somatória dos elementos a_ij * pow((-1), i+j) *
+      // determinanteMatriz(3,3,outramatriz).
       break;
     default:
       printf("Matriz quadrada maior do que o proposto, por favor, tente com "
@@ -146,7 +153,7 @@ int main(int argc, char *argv[]) {
   while (menu == 0) {
     exibeMatriz(linhas_a, colunas_a, matriz_a, matriz_a_nome);
     exibeMatriz(linhas_b, colunas_b, matriz_b, matriz_b_nome);
-    sleep(4);
+    sleep(2);
     printf("Escolha uma operação "
            "matricial:\n\n1.Soma\t2.Subtração\n3.Multiplicação\t4."
            "Determinante\n\n9. Sair do programa\n");
